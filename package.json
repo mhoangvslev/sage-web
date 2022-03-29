@@ -33,7 +33,7 @@
     "pug": "^2.0.4",
     "request": "^2.88.0",
     "sage-client": "^2.0.1",
-    "sage-widget": "^3.1.0",
+    "sage-widget": "file:submodules/sage-widget",
     "swagger-ui-dist": "^3.22.2",
     "yasgui-yasqe": "^2.11.22"
   },

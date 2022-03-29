@@ -47,7 +47,7 @@ function fetchVoID (url) {
       })
       resolve({
         content: m,
-        datasets: formatVoID(url, m)
+        datasets: formatVoID(`${url}/void`, m)
       })
     })
   })

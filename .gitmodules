@@ -1,0 +1,3 @@
+[submodule "submodules/sage-widget"]
+	path = submodules/sage-widget
+	url = https://github.com/mhoangvslev/sage-widget

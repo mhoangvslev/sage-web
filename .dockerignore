@@ -1,0 +1,3 @@
+Dockerfile
+build/**/*.html
+node_modules
