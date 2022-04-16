@@ -1,7 +1,6 @@
-FROM node:alpine3.15
-#FROM node:latest
+FROM node:16.14-alpine
 COPY . /sage-web/
 WORKDIR /sage-web/
-RUN yarn install
+RUN npm install -g node-prune && npm run rebuild
 EXPOSE 3000
-ENTRYPOINT [ "/bin/sh", "-c", "npm run cli compile http://localhost:8080/ && npm run cli serve http://localhost:8080/" ]
+ENTRYPOINT [ "/bin/sh", "-c", "npm run serve http://localhost:8080/ ]

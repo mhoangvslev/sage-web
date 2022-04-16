@@ -92,7 +92,7 @@ Promise.all(urls.map(url => {
       rdf,
       formatNumber
     })
-    return {graphName, html: page}
+    return { graphName, html: page }
   })
   const compliancePage = complianceCompiler({
     year: new Date().getFullYear(),
@@ -112,5 +112,4 @@ Promise.all(urls.map(url => {
   seePages.forEach(seePage => {
     writeFileSync(`${program.output}/see/${seePage.graphName}.html`, seePage.html)
   })
-
 }).catch(console.error)

@@ -1,3 +1,6 @@
 [submodule "submodules/sage-widget"]
 	path = submodules/sage-widget
 	url = https://github.com/mhoangvslev/sage-widget
+[submodule "submodules/sage-client"]
+	path = submodules/sage-client
+	url = https://github.com/mhoangvslev/sage-client.git

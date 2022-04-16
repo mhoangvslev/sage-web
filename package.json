@@ -6,7 +6,11 @@
   "scripts": {
     "lint": "standard src/*.js --fix",
     "cli": "node src/cli.js",
-    "test": "echo \"Error: no test specified\" && exit 0"
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "clean": "sh serve.sh clean",
+    "build": "sh serve.sh build",
+    "rebuild": "npm run clean && npm run build",
+    "serve": "sh serve.sh serve"
   },
   "repository": {
     "type": "git",
@@ -32,7 +36,7 @@
     "popper.js": "^1.15.0",
     "pug": "^2.0.4",
     "request": "^2.88.0",
-    "sage-client": "^2.0.1",
+    "sage-client": "^2.1.1",
     "sage-widget": "file:submodules/sage-widget",
     "swagger-ui-dist": "^3.22.2",
     "yasgui-yasqe": "^2.11.22"

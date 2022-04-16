@@ -63,7 +63,36 @@ Options:
 * [yarn](https://yarnpkg.com/) v1.21 or higher
 
 ```bash
-git clone https://github.com/sage-org/sage-web.git
+git clone --recurse-submodules https://github.com/sage-org/sage-web.git
 cd sage-web
-yarn install
+npm run rebuild
+npm run serve <sage-endpoint>
+```
+# Docker
+1. Add services in your `docker-compose.yml`:
+```yaml
+sage-engine:
+    container_name: sage-engine
+    image: callidon/sage:web
+    ports:
+      - '8080:8080'
+    volumes:
+      - '${SAGE_GRAPHS}:/root/sage-engine/graphs'
+    entrypoint: 'poetry run sage graphs/sage.yaml --workers=1 --port=8080'
+
+sage-web:
+    container_name: sage-web
+    depends_on:
+        - sage-engine
+    build:
+        dockerfile: Dockerfile
+        context: ./submodules/sage-web/
+    # image: minhhoangdang/sage-web:amd64
+    network_mode: "host"
+    entrypoint: '/bin/sh -c "npm run serve http://localhost:8080/"'
+```
+
+2. Deploy 
+```bash
+SAGE_GRAPHS=path/to/hdt docker-compose up sage-web
 ```
